@@ -40,11 +40,11 @@ public class CrudFuncionarioService {
 	public void inicial(Scanner scanner) {
 		while (system) {
 			System.out.println("Qual acao de funcionario deseja executar");
-			System.out.println("0 - ");
-			System.out.println("1 - ");
-			System.out.println("2 - ");
-			System.out.println("3 - ");
-			System.out.println("4 - ");
+			System.out.println("0 - Sair");
+			System.out.println("1 - Salvar");
+			System.out.println("2 - Atualizar");
+			System.out.println("3 - Visualizar");
+			System.out.println("4 - Deletar");
 
 			int action = scanner.nextInt();
 
@@ -66,6 +66,7 @@ public class CrudFuncionarioService {
 				break;
 			}
 			default:
+				system = false;
 				break;
 			}
 		}

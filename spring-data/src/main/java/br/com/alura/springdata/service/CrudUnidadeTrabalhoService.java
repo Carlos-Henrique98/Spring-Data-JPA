@@ -44,6 +44,7 @@ public class CrudUnidadeTrabalhoService {
 				deletar(scanner);
 			}
 			default:
+				system = false;
 				break;
 			}
 		}
