@@ -34,7 +34,7 @@ public class CrudCargoService {
 				break;
 			}
 			case 2: {
-				atualizar(scanner);
+				 atualizar(scanner);
 				break;
 			}
 			case 3: {
