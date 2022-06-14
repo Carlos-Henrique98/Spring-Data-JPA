@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import br.com.alura.springdata.service.CrudCargoService;
 import br.com.alura.springdata.service.CrudFuncionarioService;
 import br.com.alura.springdata.service.CrudUnidadeTrabalhoService;
+import br.com.alura.springdata.service.RelatorioFuncionarioDinamico;
 import br.com.alura.springdata.service.RelatoriosService;
 
 @SpringBootApplication
@@ -19,13 +20,16 @@ public class SpringDataApplication implements CommandLineRunner {
 	private final CrudFuncionarioService funcionarioService;
 	private final RelatoriosService relatorioService;
 	private final CrudUnidadeTrabalhoService unidadeTrabalhoService;
+	private final RelatorioFuncionarioDinamico relatorioFuncionarioDinamico;
 
 	public SpringDataApplication(CrudCargoService cargoService, CrudFuncionarioService funcionarioService,
-			RelatoriosService relatorioService, CrudUnidadeTrabalhoService unidadeTrabalhoService) {
+			RelatoriosService relatorioService, CrudUnidadeTrabalhoService unidadeTrabalhoService,
+			RelatorioFuncionarioDinamico relatorioFuncionarioDinamico) {
 		this.cargoService = cargoService;
 		this.funcionarioService = funcionarioService;
 		this.relatorioService = relatorioService;
 		this.unidadeTrabalhoService = unidadeTrabalhoService;
+		this.relatorioFuncionarioDinamico = relatorioFuncionarioDinamico;
 	}
 
 	public static void main(String[] args) {
@@ -43,8 +47,10 @@ public class SpringDataApplication implements CommandLineRunner {
 			System.out.println("2 - Funcionario");
 			System.out.println("3 - Unidade Trabalho");
 			System.out.println("4 - Relatorios");
+			System.out.println("5 - Relatorio funcionario dinamico");
 
 			int action = scanner.nextInt();
+			
 			switch (action) {
 			case 1: {
 				cargoService.inicial(scanner);
@@ -60,6 +66,10 @@ public class SpringDataApplication implements CommandLineRunner {
 			}
 			case 4: {
 				relatorioService.inicial(scanner);
+				break;
+			}
+			case 5: {
+				relatorioFuncionarioDinamico.inicial(scanner);
 				break;
 			}
 			default:
